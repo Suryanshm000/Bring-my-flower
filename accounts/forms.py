@@ -10,6 +10,6 @@ class UserCreateForm(UserCreationForm):
     
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        # self.fields['username'].widget.attrs['autocomplete'] = 'off'
         self.fields["username"].label = "Phone Number"
+        self.fields["username"].help_text = None
 
