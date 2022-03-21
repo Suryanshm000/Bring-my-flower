@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %} 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -28,16 +29,14 @@
             
             <div class="navbar-nav ml-auto">
                 <a class="nav-item nav-link textcolor" href="{% url 'accounts:login' %}" class="btn btn-simple">Log in</a>
-                <a class="nav-item nav-link textcolor" href="{% url 'accounts:signup' %}" class="btn btn-simple">Sign up</a>
-                
+                <a class="nav-item nav-link textcolor" href="{% url 'accounts:signup' %}" class="btn btn-simple">Sign up</a> 
             </div>
           </div>
         </div>
       </nav>
 
-    <div class="container mycontent">
+    <div class="container">
         {% block content %}
-    
         {% endblock %}
     </div>
 
