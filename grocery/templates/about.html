@@ -1,0 +1,32 @@
+{% extends 'navigation.html' %}
+{% load static %}
+{% block body %}
+
+
+<style>
+/* .prjdiv:hover{
+box-shadow:0 0 20px 0 rgba(0,0,0,0.3);
+transform:translateY(-20px)
+} */
+</style>
+
+<div class="container d-flex flex-column justify-content-around my-4" style="background-color: rgb(254, 224, 244);box-shadow:0 0 10px 0 rgba(0,0,0,0.3);">
+      <h2 class = "text-center my-2" style = "font-family : 'Monotype Corsiva' ; color : #e60ebb;">About Us</h2>
+      
+          <!-- <div class="col-sm-4 prjdiv">
+              <img src="{% static 'images/abt.jpg' %}" width=300 height = 200 class="img-responsive">        
+          </div> -->
+          <p class="text-center  align-center" style = "font-weight :500  ;">
+              Hola folks!
+It looks like you are here to know us better. Clothes Booking is a user friendly, easy to use website where 
+one can order clothes by just search products and fill up a simple products order form available on the website. 
+Admin can see the product order request and deliver product.
+ To use all these features you need to login first . 
+So register fast and order products.
+          </p>
+      </div>
+  </div>
+  
+  <div style="margin-bottom:200px;"></div>
+
+{% endblock %}

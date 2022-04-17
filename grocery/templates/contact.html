@@ -1,0 +1,39 @@
+{% extends 'navigation.html' %}
+{% load static %}
+{% block body %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+<style>
+.prjdiv:hover{
+color: #e60ebb;
+}
+</style>
+
+<div class="container d-flex flex-column justify-content-around my-4" style="background-color: rgb(254, 224, 244);box-shadow:0 0 10px 0 rgba(0,0,0,0.3);"">
+<h2 class="text-center my-2" style = "font-family : 'Monotype Corsiva' ; color : #e60ebb ;">Contact Us</h2>
+
+<div class="row my-4">
+<div class="col-sm-3 prjdiv" >
+<h4 class="text-center"><i class="fas fa-phone-square"></i> Contact</h4>
+<p class="text-center" style = "font-weight : bold">+91 8602768216</p>
+</div>
+
+<div class="col-sm-3 prjdiv" >
+<h4 class="text-center"><i class="fas fa-envelope"></i> Email ID</h4>
+<p class="text-center" style = "font-weight : bold">myemail@gmail.com</p>
+</div>
+
+<div class="col-sm-3 prjdiv" >
+<h4 class="text-center"><i class="fas fa-address-card"></i> Address</h4>
+<p class="text-center" style = "font-weight : bold">M.P. Nagar</p>
+</div>
+
+<div class="col-sm-3 prjdiv" >
+<h4 class="text-center"><i class="far fa-clock"> </i> Office Hours</h4>
+<p class="text-center" style = "font-weight : bold">10:00 am to 7:00 pm</p>
+</div>
+</div>
+</div>
+</body>
+
+{% endblock %}
