@@ -13,7 +13,6 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
   <link rel = stylesheet href = "//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script>
     $(document).ready( function () {
@@ -44,15 +43,15 @@
 }
 
 #myTable th {
-  text-align: left;
+  text-align: center;
   padding: 12px;
-  background-color: green;
+  background-color: #8a0884;
   color: white;
 }
 
 
 #myTable td {
-  text-align: left;
+  text-align: center;
   padding: 12px;
   background-color: white;
 }
@@ -66,7 +65,7 @@
 }
 
 .button {
-  background-color: orange; /* Green */
+  background-color: #d115ae; /* Green */
   border: none;
   color: white;
   padding: 10px;
@@ -79,7 +78,7 @@
 }
 
 
-.button1 {border-radius: 15px;}
+.button1 {border-radius:5px;}
 
   /* Make the image fully responsive */
   .carousel-inner img {
@@ -140,32 +139,32 @@
 <nav class="navbar navbar-dark bg-dark navbar-expand-sm">
   <!-- Brand -->
   
-  <a class="navbar-brand pl-5" href="{% url 'home' %}" style="color:white ; font-weight : bold">BringMyFlowers</a>
+  <a class="navbar-brand px-2" href="#" style="color:white ;font-size: 1rem; font-weight : bold">BringMYFlowers Shop</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
 
 <div class="collapse navbar-collapse" id="collapsibleNavbar">
   <!-- Links -->
-  <ul class="navbar-nav pl-5 text-center">
+  <ul class="navbar-nav mr-auto text-center">
     {% if request.user.is_staff %}
-    <li class="nav-item">
-      <a class="nav-link" href="{% url 'admin_home' %}" style="color:white"><ion-icon style="margin-right:2px" name="home-sharp"></ion-icon>Home</a>
+    <li class="nav-item pr-1">
+      <a class="nav-link" href="{% url 'admin_home' %}" style="color:white"><ion-icon name="home-sharp"></ion-icon>Home</a>
     </li>
 
-    <li class="nav-item">
-      <a class="nav-link" href="{% url 'view_user' %}" style="color:white"><ion-icon style="margin-right:2px" name="people"></ion-icon>View User</a>
+    <li class="nav-item  pr-1">
+      <a class="nav-link" href="{% url 'view_user' %}" style="color:white"><ion-icon name="people"></ion-icon>View User</a>
     </li>
-      <li class="nav-item">
-      <a class="nav-link" href="{% url 'admin_viewBooking' %}" style="color:white"><ion-icon style="margin-right:2px" name="logo-bitcoin"></ion-icon>View Booking</a>
+      <li class="nav-item pr-1">
+      <a class="nav-link" href="{% url 'admin_viewBooking' %}" style="color:white"><ion-icon name="logo-bitcoin"></ion-icon>View Booking</a>
     </li>
-<li class="nav-item">
-      <a class="nav-link" href="{% url 'view_feedback' %}" style="color:white"><ion-icon style="margin-right:2px" name="chatbubbles"></ion-icon>View Feedback</a>
+<li class="nav-item  pr-1">
+      <a class="nav-link" href="{% url 'view_feedback' %}" style="color:white"><ion-icon  name="chatbubbles"></ion-icon>View Feedback</a>
     </li>
 
   </li>
 
-    <li class="nav-item dropdown">
+    <li class="nav-item pr-1 dropdown">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white"><ion-icon style="margin-right:4px" name="albums"></ion-icon>Product</a>
     <div class="dropdown-menu">
       <a class="dropdown-item" href="{% url 'add_product' %}">Add Product</a>
@@ -173,7 +172,7 @@
     </div>
   </li>
 
-    <li class="nav-item dropdown">
+    <li class="nav-item pr-1 dropdown">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:white"><ion-icon style="margin-right:4px" name="newspaper-sharp"></ion-icon>Category</a>
     <div class="dropdown-menu">
       <a class="dropdown-item" href="{% url 'add_categary' %}">Add Category</a>
@@ -185,59 +184,60 @@
 
     {% if request.user.username %}
     {% if not request.user.is_staff %}
-    <li class="nav-item">
+    <li class="nav-item ">
       <a class="nav-link" href="{% url 'home' %}" style="color:white"><ion-icon style="margin-right:2px" name="home-sharp"></ion-icon>Home</a>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item ">
       <a class="nav-link" href="{% url 'view_booking' %}" style="color:white"><ion-icon style="margin-right:2px" name="aperture"></ion-icon>View Booking</a>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item ">
       <a class="nav-link" href="{% url 'send_feedback' request.user.id %}" style="color:white"><ion-icon style="margin-right:2px" name="send"></ion-icon>Send Feedback</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item ">
       <a class="nav-link" href="{% url 'view_product' 0 %}" style="color:white"><ion-icon style="margin-right:2px" name="eye"></ion-icon>View Product</a>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item ">
       <a class="nav-link" href="{% url 'change_password' %}" style="color:white"><ion-icon style="margin-right:2px" name="document-text-sharp"></ion-icon>Change Password</a>
     </li>
 
     {% endif %}
     {% else %}
 
-    <li class="nav-item">
-      <a class="nav-link" href="{% url 'home' %}" style="color:white"><ion-icon class="mx-2" style="margin-right:2px" name="home-sharp"></ion-icon>Home</a>
+    <li class="nav-item pr-1">
+      <a class="nav-link" href="{% url 'home'  %}" style="color:white"><ion-icon style="margin-right:2px" name="home-sharp"></ion-icon>Home</a>
     </li>
 
-    <li class="nav-item">
-      <a class="nav-link" href="{% url 'about' %}" style="color:white"><ion-icon class="mx-2" style="margin-right:2px" name="briefcase-sharp"></ion-icon>About</a>
+    <li class="nav-item pr-1">
+      <a class="nav-link" href="{% url 'about' %}" style="color:white"><ion-icon  style="margin-right:2px" name="briefcase-sharp"></ion-icon>About</a>
     </li>
 
-    <!-- <li class="nav-item">
-      <a class="nav-link" href="{% url 'contact' %}" style="color:white"><ion-icon class="mx-2" style="margin-right:2px" name="phone-portrait-sharp"></ion-icon>Contact</a>
-    </li> -->
+    <li class="nav-item pr-1">
+      <a class="nav-link" href="{% url 'contact' %}" style="color:white"><ion-icon style="margin-right:2px" name="phone-portrait-sharp"></ion-icon>Contact</a>
+    </li>
     {% endif %}
 
 
 
 
     {% if request.user.is_authenticated %}
-    <a class="nav-link" href="{% url 'logout' %}" style="color:white"><ion-icon class="mx-2" style="margin-right:2px" name="power-sharp"></ion-icon>Logout</a>
+    <li class="nav-item">
+    <a class="nav-link" href="{% url 'logout' %}" style="color:white"><ion-icon   name="power-sharp"></ion-icon>Logout</a>
     </li>
     {% if not request.user.is_staff %}
     <li class="nav-item">
-      <a href="{% url 'profile' %}"><h5 class="nav-link" style="color:white"><ion-icon class="mx-2" style="margin-right:4px;color:#FF0000" name="person-circle-sharp"></ion-icon>Welcome {{request.user.username}}</h5>
+      <a href="{% url 'profile' %}" class="nav-link" style="color:white"><ion-icon  name="person-circle-sharp"></ion-icon>Welcome {{request.user.username}}
       </a></li>
     {% else %}
 
-    <li class="nav-item">
-      <h5  class="nav-link" style="color:white"><ion-icon style="margin-right:4px;color:#FF0000" name="person-circle-sharp"></ion-icon>Welcome {{request.user.username}}</h5>
+    <li class="nav-item pr-1">
+      <a  class="nav-link" style="color:white"><ion-icon style="margin-right:2px;" name="person-circle-sharp"></ion-icon>Welcome {{request.user.username}}</a>
     </li>
     {% endif %}
         {% else %}
-    <li class="nav-item">
+    <li class="nav-item pr-1">
       <a class="nav-link" href="{% url 'login' %}" style="color:white;"><ion-icon class="mx-2" style="margin-right:2px" name="log-in-sharp"></ion-icon>Login</a>
     </li>
     
@@ -246,9 +246,10 @@
 
     {% if not request.user.is_staff %}
     {% if request.user.username %}
+    <li class="nav-item pr-1">
       <a href="{% url 'cart' %}" style="border:1px solid gray" class="btn btn-default btn-lg text-dark text-capitalize">
-        <ion-icon style="color:white;margin-top:2%" name="cart"></ion-icon><span style="color:white">{{num1}}</span><span style="margin-left:6px;margin-top:2%;color:white">Cart</span></a></center>
-
+        <ion-icon style="color:white;margin-top:2%" name="cart"></ion-icon><span style="color:white">{{num1}}</span><span style="margin-left:2px;margin-top:2px;color:white">Cart</span></a></center>
+    </li>
 {% endif %}
     {% endif %}
 
@@ -263,37 +264,5 @@
 {% endblock %}
 
 
-</body>
-<footer style="margin-top:70px;"
 
-  <div class="container d-flex flex-column justify-content-around my-4" style="background-color: rgba(105, 89, 100, 0.274);box-shadow:0 0 10px 0 rgba(0,0,0,0.3);">
-    <h2 class="text-center my-2" style = "font-family : 'Monotype Corsiva' ; color : #e60ebb ;">Contact Us</h2>
-    
-    <div class="row my-4">
-    <div class="col-sm-3 prjdiv" >
-    <h4 class="text-center"><i class="fas fa-phone-square"></i> Contact</h4>
-    <p class="text-center" style = "font-weight : bold">+91 8602768216</p>
-    </div>
-    
-    <div class="col-sm-3 prjdiv" >
-    <h4 class="text-center"><i class="fas fa-envelope"></i> Email ID</h4>
-    <p class="text-center" style = "font-weight : bold">myemail@gmail.com</p>
-    </div>
-    
-    <div class="col-sm-3 prjdiv" >
-    <h4 class="text-center"><i class="fas fa-address-card"></i> Address</h4>
-    <p class="text-center" style = "font-weight : bold">M.P. Nagar</p>
-    </div>
-    
-    <div class="col-sm-3 prjdiv" >
-    <h4 class="text-center"><i class="far fa-clock"> </i> Office Hours</h4>
-    <p class="text-center" style = "font-weight : bold">10:00 am to 7:00 pm</p>
-    </div>
-    </div>
-    </div> 
-  
-   
-</footer>
-
-
-</html>
+</body></html>

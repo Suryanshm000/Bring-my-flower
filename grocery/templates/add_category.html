@@ -7,12 +7,18 @@
     alert('One New Category Added Successfully');
 </script>
 {% endif %}
-
+<style>
+  .mybtnone:hover{background-color : #d115ae}
+.mybtnone{
+	background-color: #8a0884 ;
+	color: aliceblue;
+}
+</style>
 
 <div class="container">
-    <h2 style="margin-top:20px" align="center">Add Category</h2><hr>
+    <h2 class="my-4" style="color: #d115ae;text-align: center; font-family : 'Monotype Corsiva';">Add Category</h2>
 
-<div class="container-fluid" style="width:70%;margin-top:10%">
+<div class="container-fluid" style="width:50%;">
 <form method="post" action="">
     {% csrf_token %}
   <div class="form-group">
@@ -20,7 +26,7 @@
     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="cat" placeholder="Enter Category">
   </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn mybtnone" >Submit</button>
 </form>
 </div>
 </div>

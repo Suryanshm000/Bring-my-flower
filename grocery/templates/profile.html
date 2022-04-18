@@ -1,19 +1,30 @@
 {% extends 'navigation.html' %}
 {% load static %}
 {% block body %}
-<div class="container">
-    <h2 style="margin-top:20px" align="center">View Profile</h2><hr>
+<style>
+    .mybtnone:hover{background-color : #d115ae}
+  .mybtnone{
+      background-color: #8a0884 ;
+      color: aliceblue;
+  }
+  .table{
+      border: 1px solid #8a0884;
+      background-color: #fdcaf3;
+  }
+  </style>
+<div class="container ">
+    <h2 style="margin-top:20px;color: #d115ae;text-align: center; font-family : 'Monotype Corsiva';"align="center">View Profile</h2>
 
-<div  class="container-fluid" style="width:80%;margin-bottom:5%">
-    <hr><div class="row">
+<div  class="container-fluid table" style="width:80%;margin-bottom:5%;color: #8a0884;">
+    <div class="row p-4 my-4">
         <div class="col-md-6">
             <strong>Full Name:</strong>
         </div>
         <div class="col-md-6">
             {{pro.user.first_name}} {{pro.user.last_name}}
         </div>
-    </div><hr>
-     <div class="row">
+    </div>
+     <div class="row p-4 my-4">
         <div class="col-md-6">
             <strong>Customer Pic:</strong>
         </div>
@@ -21,47 +32,47 @@
            <img src="{{pro.image.url}}" style="width:150px;height:150px">
         </div>
 
-    </div><hr>
-    <div class="row">
+    </div>
+    <div class="row p-4 my-4">
         <div class="col-md-6">
             <strong>Email Id :</strong>
         </div>
         <div class="col-md-6">
             {{pro.user.email}}
         </div>
-    </div><hr>
-     <div class="row">
+    </div>
+     <div class="row p-4 my-4">
         <div class="col-md-6">
             <strong>Contact :</strong>
         </div>
         <div class="col-md-6">
             {{pro.contact}}
         </div>
-     </div><hr>
-    <div class="row">
+     </div>
+    <div class="row p-4 my-4">
         <div class="col-md-6">
             <strong>Date of Birth :</strong>
         </div>
         <div class="col-md-6">
             {{pro.dob}}
         </div>
-    </div><hr>
-     <div class="row">
+    </div>
+     <div class="row p-4 my-4">
         <div class="col-md-6">
             <strong>City :</strong>
         </div>
         <div class="col-md-6">
             {{pro.city}}
         </div>
-     </div><hr><div class="row">
+     </div><div class="row p-4 my-4">
         <div class="col-md-6">
             <strong>Address :</strong>
         </div>
         <div class="col-md-6">
             {{pro.address}}
         </div>
-    </div><hr>
-    <a href="{% url 'edit_profile' %}"><button class="btn btn-primary" style="width:100%;margin-bottom:5%">Edit Profile</button></a>
+    </div>
+    <a href="{% url 'edit_profile' %}"><button class="btn mybtnone" style="width:100%;margin-bottom:5%">Edit Profile</button></a>
 
 </div>
 </div>

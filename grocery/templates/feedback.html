@@ -1,8 +1,19 @@
 {% extends 'navigation.html' %}
 {% block body %}
 {% load static %}
+<style>
+  .mybtnone:hover{background-color : #d115ae}
+.mybtnone{
+background-color: #8a0884 ;
+color: aliceblue;
+}
+.prjdiv{
+box-shadow:0 0 20px 0 rgba(0,0,0,0.3);
+transform:translateY(-20px)
+} 
+</style>
 <div class="container">
-    <h2 style="margin-top:20px" align="center">Send Feedback</h2><hr>
+    <h2 style="margin-top:20px;color: #d115ae;text-align: center; font-family : 'Monotype Corsiva';" align="center">Send Feedback</h2>
 
 <div class="container-fluid" style="width:70%;margin-top:10%">
 <form method="post" action="" enctype="multipart/form-data">
@@ -32,7 +43,7 @@
     <label for="exampleFormControlTextarea1">Description</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" name="desc" rows="3"></textarea>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn mybtnone">Submit</button>
 </form>
 </div>
 </div>

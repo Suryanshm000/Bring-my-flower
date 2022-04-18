@@ -1,8 +1,15 @@
 {% extends 'navigation.html' %}
 {% block body %}
 {% load static %}
+<style>
+  .mybtnone:hover{background-color : #d115ae}
+.mybtnone{
+	background-color: #8a0884 ;
+	color: aliceblue;
+}
+</style>
 <div class="container">
-    <h2 style="margin-top:20px" align="center">Add Product</h2><hr>
+    <h2 class="my-4" style="color: #d115ae;text-align: center; font-family : 'Monotype Corsiva';"align="center">Add Product</h2>
 
 <div class="container-fluid" style="width:70%;margin-top:10%">
 <form method="post" action="" enctype="multipart/form-data">
@@ -34,7 +41,7 @@
     <label for="exampleFormControlTextarea1">Description</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" name="desc" rows="3"></textarea>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary mybtnone">Submit</button>
 </form>
 </div>
 </div>
