@@ -2,23 +2,29 @@
 {% block body %}
 {% load static %}
 
-{% ifequal error "yes" %}
+{% if error == "yes" %}
 <script>
     alert('logged in successfully');
     window.location=('{% url 'home' %}');
 </script>
-{% endifequal %}
-{% ifequal error "not" %}
+{% endif %}
+{% if error == "not" %}
 <script>
     alert('Username & Password are not Matching');
 </script>
-{% endifequal %}
+{% endif %}
 
 <style>
-.mybtnone:hover{background-color : #E40203}
+
+.mybtnone:hover{background-color : #d115ae}
+.mybtnone{
+	background-color: #8a0884 ;
+	color: aliceblue;
+}
 </style>
+
 <div class="container">
-    <h2 style="margin-top:20px" align="center">Login Form</h2><hr>
+    <h2 style="margin-top:20px;color: #d115ae;text-align: center; font-family : 'Monotype Corsiva';" align="center">Login Form</h2>
 
 <div class="container-fluid" style="width:70%;margin-top:10%">
 <form method="post" action="">
@@ -32,7 +38,7 @@
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="pwd" required>
   </div>
   <button type="submit" class="btn btn-primary mybtnone">Login</button>
-  <button class="btn btn-primary mybtnone"><a href="{% url 'signup' %}" style="color:white">Signup</a></button>
+  <button class="btn btn-primary mybtnone"><a href="{% url 'signup' %}" style="color:white"></a>Signup</button>
 </form>
 </div>
 </div>
