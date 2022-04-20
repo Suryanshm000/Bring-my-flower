@@ -80,8 +80,10 @@ def Login(request):
             if user:
                 login(request, user)
                 error = "yes"
+                return render(request, 'all_product.html')
             else:
                 error = "not"
+            
         except:
             error="not"
     d = {'error': error}

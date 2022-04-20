@@ -13,7 +13,12 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
   <link rel = stylesheet href = "//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+
   <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
 <script>
     $(document).ready( function () {
     $('#myTable').DataTable();
@@ -139,7 +144,7 @@
 <nav class="navbar navbar-dark bg-dark navbar-expand-sm">
   <!-- Brand -->
   
-  <a class="navbar-brand px-2" href="#" style="color:white ;font-size: 1rem; font-weight : bold">BringMYFlowers Shop</a>
+  <a class="navbar-brand px-2" href="{% url 'home' %}" style="color:white ;font-size: 1rem; font-weight : bold">BringMYFlowers Shop</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -214,9 +219,9 @@
       <a class="nav-link" href="{% url 'about' %}" style="color:white"><ion-icon  style="margin-right:2px" name="briefcase-sharp"></ion-icon>About</a>
     </li>
 
-    <li class="nav-item pr-1">
+    <!-- <li class="nav-item pr-1">
       <a class="nav-link" href="{% url 'contact' %}" style="color:white"><ion-icon style="margin-right:2px" name="phone-portrait-sharp"></ion-icon>Contact</a>
-    </li>
+    </li> -->
     {% endif %}
 
 
@@ -263,6 +268,39 @@
 
 {% endblock %}
 
+<div style="margin-bottom: 80px;"></div>
 
 
-</body></html>
+</body>
+<footer style="margin-top:100px; background-color: rgba(18, 2, 13, 0.256);"
+
+  <div class="container d-flex flex-column justify-content-around my-4" style="box-shadow:0 0 10px 0 rgba(0,0,0,0.3);">
+    <h2 class="text-center my-2" style = "font-family : 'Monotype Corsiva' ; color : #e60ebb ;">Contact Us</h2>
+    
+    <div class="row my-4">
+    <div class="col-sm-3 prjdiv" >
+    <h4 class="text-center"><i class="fas fa-phone-square"></i> Contact</h4>
+    <p class="text-center" style = "font-weight : bold">+91 8602768216</p>
+    </div>
+    
+    <div class="col-sm-3 prjdiv" >
+    <h4 class="text-center"><i class="fas fa-envelope"></i> Email ID</h4>
+    <p class="text-center" style = "font-weight : bold">myemail@gmail.com</p>
+    </div>
+    
+    <div class="col-sm-3 prjdiv" >
+    <h4 class="text-center"><i class="fas fa-address-card"></i> Address</h4>
+    <p class="text-center" style = "font-weight : bold">M.P. Nagar</p>
+    </div>
+    
+    <div class="col-sm-3 prjdiv" >
+    <h4 class="text-center"><i class="far fa-clock"> </i> Office Hours</h4>
+    <p class="text-center" style = "font-weight : bold">10:00 am to 7:00 pm</p>
+    </div>
+
+    </div>
+  </div> 
+
+ 
+</footer>
+</html>
