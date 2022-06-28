@@ -14,29 +14,35 @@
 <div class="container-fluid" style="width:70%;margin-top:10%">
 <form method="post" action="" enctype="multipart/form-data">
     {% csrf_token %}
-    <div class="form-row">
+  <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputEmail4">Product Name</label>
       <input type="text" class="form-control" placeholder="Enter Product Name" name="pname" id="inputEmail4">
     </div>
     <div class="form-group col-md-6">
     <label for="exampleInputPassword1">Product Image</label>
-    <input type="file" class="form-control" id="exampleInputPassword1" name="img" value="choose file">
-</div></div>
-    <div class="form-row">
-        <div class="form-group col-md-6">
+    <input type="file" class="form-control" id="exampleInputPassword1" name="img" value="choose file" required>
+    </div>
+  </div>
+  <div class="form-row">
+      <div class="form-group col-md-6">
       <label for="inputState">Category</label>
       <select id="inputState" class="form-control" name="cat">
           {% for i in cat %}
         <option value="{{i.name}}">{{i.name}}</option>
           {% endfor %}
       </select>
-    </div>
+      </div>
 
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Product Price</label>
-      <input type="number" class="form-control" name="price" placeholder="Enter Price" id="inputEmail4">
-    </div></div>
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Product Price</label>
+        <input type="number" class="form-control" name="price" placeholder="Enter Price" id="inputEmail4" required>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="items">Product Count</label>
+        <input type="number" class="form-control" name="items" placeholder="Enter number of products" id="items">
+      </div>
+  </div>
     <div class="form-group">
     <label for="exampleFormControlTextarea1">Description</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" name="desc" rows="3"></textarea>

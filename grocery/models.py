@@ -13,7 +13,8 @@ class Product(models.Model):
     name = models.CharField(max_length=30, null=True)
     price = models.IntegerField(null=True)
     desc = models.TextField(null=True)
-    # item_count = models.IntegerField(null = False)
+    item_count = models.IntegerField(null=True, default=0)
+
     def __str__(self):
         return self.category.name+"--"+self.name
 
@@ -27,7 +28,7 @@ class Profile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     dob = models.DateField(null=True)
     city = models.CharField(max_length=30, null=True)
-    address = models.CharField(max_length=50, null=True)
+    address = models.CharField(max_length=200, null=True)
     contact = models.CharField(max_length=10, null=True)
     image = models.FileField() 
 
@@ -49,6 +50,7 @@ class Booking(models.Model):
     quantity = models.CharField(max_length=100,null=True)
     book_date = models.CharField(max_length=30, null=True)
     total = models.IntegerField(null=True)
+    d_address = models.CharField(null=True, max_length=200)
 
     def __str__(self):
         return self.book_date+" "+self.profile.user.username

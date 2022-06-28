@@ -131,8 +131,9 @@ def Add_Product(request):
         pr = request.POST['price']
         i = request.FILES['img']
         d = request.POST['desc']
+        items = request.POST['items']
         ct = Category.objects.get(name=c)
-        Product.objects.create(category=ct, name=p, price=pr, image=i, desc=d)
+        Product.objects.create(category=ct, name=p, price=pr, image=i, desc=d, item_count=items)
         error=True
     d = {'cat': cat,'error':error}
     return render(request, 'add_product.html', d)
@@ -356,10 +357,11 @@ def Booking_order(request, pid):
         con = request.POST['contact']
         b = request.POST['book_id']
         t = request.POST['total']
+        sAddress = request.POST['sAdd']
         user = User.objects.get(username=c)
         profile = Profile.objects.get(user=user)
         status = Status.objects.get(name="pending")
-        book1 = Booking.objects.create(profile=profile, book_date=d,booking_id=b,total=t,quantity=num1,status=status)
+        book1 = Booking.objects.create(profile=profile, book_date=d,booking_id=b,total=t,quantity=num1,status=status, d_address=sAddress)
         cart2 = Cart.objects.filter(profile=profile).all()
         cart2.delete()
         return redirect('payment',book1.total)
@@ -435,6 +437,7 @@ def booking_detail(request,pid,bid):
 def admin_booking_detail(request,pid,bid,uid):
     if not request.user.is_authenticated:
         return redirect('login_admin')
+        
     user = User.objects.get(id=uid)
     profile = Profile.objects.get(user=user)
     cart =  Cart.objects.filter(profile=profile).all()
@@ -451,7 +454,7 @@ def admin_booking_detail(request,pid,bid,uid):
     for i in cart:
         total+=i.product.price
         num1+=1
-    d = {'profile':profile,'cart':cart,'total':total,'num1':num1,'book':li2,'product':product,'total':book}
+    d = {'profile':profile,'cart':cart,'total':total,'num1':num1,'book':li2,'product':product,'booking':book}
     return render(request,'admin_view_booking_detail.html',d)
 
 def Edit_status(request,pid,bid):
@@ -474,7 +477,7 @@ def Edit_status(request,pid,bid):
 def Admin_View_product(request):
     if not request.user.is_authenticated:
         return redirect('login_admin')
-    pro = Product.objects.all()
+    pro = Product.objects.all().order_by('item_count')
     d = {'pro':pro}
     return render(request,'admin_view_product.html',d)
 
@@ -497,9 +500,9 @@ def profile(request):
         pass
     num1 = 0
     total = 0
-    for i in cart:
-        total += i.product.price
-        num1 += 1
+    # for i in cart:
+    #     total += i.product.price
+    #     num1 += 1
     user = User.objects.get(id=request.user.id)
     pro = Profile.objects.get(user=user)
     d={'pro':pro,'user':user,'num1':num1,'total':total}
