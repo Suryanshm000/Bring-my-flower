@@ -1,10 +1,17 @@
 {% extends 'navigation.html' %}
 {% block body %}
 {% load static %}
+<style>
+  .mybtnone:hover{background-color : #d115ae}
+.mybtnone{
+	background-color: #8a0884 ;
+	color: aliceblue;
+}
+</style>
 <div class="container">
-    <h2 style="margin-top:20px" align="center">Edit Profile</h2><hr>
+    <h2 class="mt-4" style="color: #d115ae;text-align: center; font-family : 'Monotype Corsiva';" align="center">Edit Profile</h2>
 
-<div class="container-fluid" style="width:70%;margin-top:10%">
+<div class="container-fluid" style="width:70%;margin-top:10%;">
 <form method="post" action="" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="form-row">
@@ -67,7 +74,7 @@
 </div>
     </div>
 
-  <button type="submit" class="btn btn-primary" style="margin-bottom:5%">update</button>
+  <button type="submit" class="btn mybtnone" style="margin-bottom:5%">update</button>
 </form>
 </div>
 </div>
