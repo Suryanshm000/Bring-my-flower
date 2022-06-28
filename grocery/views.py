@@ -493,11 +493,11 @@ def profile(request):
         return redirect('login')
     user = User.objects.get(id=request.user.id)
     pro = Profile.objects.get(user=user)
-    cart=""
-    try:
-        cart = Cart.objects.get(profile=pro)
-    except:
-        pass
+    # cart=""
+    # try:
+    #     cart = Cart.objects.get(profile=pro)
+    # except:
+    #     pass
     num1 = 0
     total = 0
     # for i in cart:
@@ -515,16 +515,16 @@ def Edit_profile(request):
     error = False
     user=User.objects.get(id=request.user.id)
     pro = Profile.objects.get(user=user)
-    cart = ""
-    try:
-        cart = Cart.objects.get(profile=pro)
-    except:
-        pass
+    # cart = ""
+    # try:
+    #     cart = Cart.objects.get(profile=pro)
+    # except:
+    #     pass
     num1=0
     total=0
-    for i in cart:
-        total+=i.product.price
-        num1+=1
+    # for i in cart:
+    #     total+=i.product.price
+    #     num1+=1
     if request.method == 'POST':
         f = request.POST['fname']
         l = request.POST['lname']
