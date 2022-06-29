@@ -21,7 +21,7 @@
 
 <body>
 
-  <div class="d-flex" id="wrapper" style="background-color: #ffbbf3;">
+  <div class="d-flex" id="wrapper" >
 
     <!-- Sidebar -->
     <div class=" border-right" id="sidebar-wrapper" style="background-color: white;" >
@@ -39,7 +39,7 @@
     <div id="page-content-wrapper">
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <button class="btn mybtnone" id="menu-toggle">Toggle Menu</button>
+        <button class="btn mybtnone" id="menu-toggle" style="border-radius: 50%;font-size: 100%;font-weight: bold;">></button>
 
         <button class="navbar-toggler mybtnone" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -49,21 +49,21 @@
       <div class="container-fluid">
       <center><h2 style="margin-top:20px;color: #d115ae;text-align: center; font-family : 'Monotype Corsiva';">View Product</h2></center>
 
- <div class="container-fluid">
-   	<h1 class="text-center mt-5 mb-5">
-   	</h1>
-	 <h2>{{cat1.name}}</h2>
-   	<div id="{{i.id}}" class="carousel slide" data-ride="carousel">
+ <div class="container-fluid" >
+  
+	 <h2 style="margin-top:2%;">{{cat1.name}}</h2>
+   	<div id="{{i.id}}" class="carousel slide" data-ride="carousel" >
    		<div class="carousel-inner row w-100 mx-auto">
 			{% for j in pro1 %}
-				<div class="carousel-item col-md-3 active"><div class="card">
-					<center><img class="card-img-top " align="center" src="{{j.image.url}}" style="width:160px;height:170px;float:center" alt="card-img"></center>
-   						<div class="card">
-   						<h4 class="card-title">{{j.name}} Rs.{{j.price}}</h4>
-   						<p class="card-text">{{j.desc}}</p>
+				<div class="carousel-item col-md-4 active" style=" height: 30%;">
+          <div class="card" style="background-color:#8a0884;height: 100%;">
+					<center><img class="card-img-top " align="center" src="{{j.image.url}}" style="width:160px;height:170px;float:center ;margin-top: 1.5%;" alt="card-img"></center>
+   						<div class="card" style="height:50%;margin-top: 2%; background-color: #f8a7e9;">
+   						<h4 class="" style="font-size:110%;">{{j.name}} Rs.{{j.price}}</h4>
+   						<p class="" style="font-size: 100%">{{j.desc}}</p>
    						<form align="center" action="{% url 'add_cart' j.id %}" method="post">
 	                        {% csrf_token %}
-                            <button type="submit" class="btn mybtnone">Add to Cart</button>
+                            <button type="submit" class="btn mybtnone" style="height:20% ;margin-top: -2%;margin-bottom: 5%;">Add to Cart</button>
 </form>
    					</div>
    				</div>
